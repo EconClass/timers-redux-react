@@ -1,6 +1,7 @@
 export const NEW_TIMER = "NEW_TIMER";
 export const TOGGLE_TIMER = "TOGGLE_TIMER";
 export const SELECT_TIMER = "SELECT_TIMER";
+export const UPDATE = "UPDATE";
 
 const addTimer = (name) => {
   return {
@@ -22,5 +23,12 @@ const selectTimer = (index) => {
     payload: { index }
   };
 };
+
+export const update = (deltaTime) => {
+  return {
+    type: UPDATE,
+    payload: { deltaTime }
+  }
+}
 
 export { addTimer, toggleTimer, selectTimer };
