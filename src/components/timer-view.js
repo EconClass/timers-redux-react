@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+import './timer-view.css'
 // Import our toggleTimer action
 import { toggleTimer } from '../actions';
 import { formatTime } from '../utils';
@@ -11,11 +11,15 @@ class TimerView extends Component {
 
     // Extract these specific props to use in the component
     const { index, toggleTimer, timer } = this.props
+    const buttonClass = timer.isRunning ? "stop" : "start";
     return (
-      <div>
-        <h2>{timer.name}</h2>
-        <h1>{formatTime(timer.time)}</h1>
+      <div className='timer-view'>
+        <div>
+          <h2 className='timer-view-name__h2'>{timer.name}</h2>
+          <h1 className='timer-view-name__h1'>{formatTime(timer.time)}</h1>
+        </div>
         <button
+          className={`timer-view__button timer-view__button--${buttonClass}`}
           // This calls our toggleTimer action on the specific timer (specified by the index)
           onClick={(e) => {
             toggleTimer(index)
