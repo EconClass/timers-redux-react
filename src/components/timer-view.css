@@ -7,9 +7,8 @@
 }
 
 .timer-view-name__h2 {
-  justify-self: end;
   margin: 0;
-  font-size: 1.25em;
+  font-size: 3em;
 }
 
 .timer-view-time__h1 {

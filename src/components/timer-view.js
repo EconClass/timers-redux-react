@@ -14,10 +14,8 @@ class TimerView extends Component {
     const buttonClass = timer.isRunning ? "stop" : "start";
     return (
       <div className='timer-view'>
-        <div>
-          <h2 className='timer-view-name__h2'>{timer.name}</h2>
-          <h1 className='timer-view-name__h1'>{formatTime(timer.time)}</h1>
-        </div>
+        <h2 className='timer-view-name__h2'>{timer.name}</h2>
+        <h1 className='timer-view-name__h1'>{formatTime(timer.time)}</h1>
         <button
           className={`timer-view__button timer-view__button--${buttonClass}`}
           // This calls our toggleTimer action on the specific timer (specified by the index)
