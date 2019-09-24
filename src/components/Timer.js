@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 
 class Timer {
   // The name property is passed into the constructor and the class is initialized.
