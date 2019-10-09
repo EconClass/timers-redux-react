@@ -4,11 +4,18 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
 import reducers from './reducers';
+import { loadState, saveState } from './utils';
+import throttle from 'lodash/throttle';
 import NewTimer from './components/new-timer';
 import ListTimers from './components/list-timers';
 import { update } from './actions';
 
-const store = createStore(reducers)
+const persistedState = loadState()
+const store = createStore(reducers, persistedState)
+
+store.subscribe(throttle(() => {
+  saveState(store.getState())
+}, 1000));
 
 let lastUpdateTime = Date.now()
 setInterval(() => {

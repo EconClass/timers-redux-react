@@ -4,10 +4,6 @@ import { selectTimer } from '../actions'
 import TimerView from './timer-view'
 
 class ListTimers extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     return (
       <div>
